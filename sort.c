@@ -14,9 +14,9 @@ int min(int array[], int i, int n)
 {
     int m = i, k;
     
-    for (k=i+1; k < n; k++) {
-        if (array[k] < array[m])
-            m = k;
+    for (k=i+1; k != n-1; k++) {
+        if (array[i] < array[m])
+            m = i;
     }
     
     return m;
@@ -24,12 +24,10 @@ int min(int array[], int i, int n)
 
 void selectionSort(int array[], int n)
 {
-    int i, j, aux;
+    int i, j;
     for (i=0; i < n; i++) {
         j = min(array, i, n);
-        aux = array[i];
         array[i] = array[j];
-        array[j] = aux;
     }
 }
 
